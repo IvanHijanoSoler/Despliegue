@@ -27,3 +27,11 @@ Usando comandos de AWS CLI, crea una pila con el nombre introducido por argument
 Sintaxis: sudo bash stackdelete <nombrePila>
 
 Elimina una pila de nombre <nombrePila> introducido por argumentos usando comandos de AWS CLI
+
+[x] ***ubuntu.yml***
+
+Plantilla en formato YAML para crear una pila en AWS, a la que se le ha añadido el codigo de script.sh para instalar tomcat y que de como output la pagina de tomcat, hola mundo.
+
+[x] ***holaMundo***
+
+Proyecto gradle que lleva a una pagina creada con codigo Java.

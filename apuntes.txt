@@ -1,0 +1,42 @@
+Funciones intrinsecas:
+ !Ref -> Referencia
+ !Sub -> Cambia cadenas de caracteres. Formato String (placeholders) 
+ !GetAtt -> Trae atributo nombrado en formato Fuente.atributo
+
+Parametros:
+
+Tratando nuestra plantilla como una función, resources es el cuerpo de la misma, y
+parameters son los Parametros de la misma.
+
+Pseudoparametros:
+
+AWS::Stackname
+AWS::StackID
+AWS::Region
+
+
+Resources:
+    |
+    | keyname: !Ref keyname
+    |
+Parameters:
+    | keyname:
+        | Type: String
+        | Description: "Key name to use for the instance"
+        | Default: ""
+        | AllowedValues:
+        |   -foo
+Tipos predefinidos exclusivos de amazon
+
+Outputs:
+| IPPublic:
+    | Description: "Ip publica de la instancia"
+    | Type: String
+    | Value: !Sub 'http://${!GetAtt EC2Instance.PublicIp}
+
+
+UserData: Recibe un script del usuario (String)
+ UserData: Fn::Base64!Sub| ... 
+
+ cfn-sign
+ tags:
